@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://automationintesting.online",
+	"env": {
+		"environment": "test"
+	}
+}

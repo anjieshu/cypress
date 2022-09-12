@@ -1,0 +1,35 @@
+{
+  "name": "cypress.bdd.test",
+  "version": "0.0.1",
+  "description": "Cypress test automation using Cucumber BDD",
+  "main": "index.js",
+  "author": "anjie.shu@gmail.com",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --headless --browser chrome --env allure=true",
+    "cy:run:chrome": "cypress run --browser chrome --headless --env allure=true",
+    "cy:run:chrome:headed": "cypress run --browser chrome --headed --env allure=true",
+    "allure:report": "allure generate --clean testResults --output testResults/allure-report",
+    "singlefeature": "cypress run --headless --browser chrome --env allure=true --spec **/BookRoom.feature"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "testResults/cucumber-json",
+      "filePrefix": "cucumber_",
+      "fileSuffix": ""
+    }
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.8.1",
+    "allure-commandline": "^2.13.0",
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-xpath": "^1.6.2",
+    "faker": "^5.5.3"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
